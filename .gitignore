@@ -48,7 +48,7 @@ Temporary Items
 
 # Unity5 gitignore
 
-/[Ll]ibrary/
+VR\ Project/[Ll]ibrary/
 VR\ Project/[Tt]emp/
 VR\ Project/[Oo]bj/
 VR\ Project/[Bb]uild/
