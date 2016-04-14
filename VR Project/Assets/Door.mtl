@@ -1,0 +1,32 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Metals_Ornamental_Metals_Aluminum_Brushed
+Ka 0.000000 0.000000 0.000000
+Kd 0.415686 0.415686 0.360784
+Ks 0.330000 0.330000 0.330000
+map_Kd Bedroom_door/Metals_Ornamental_Metals_Aluminum_Brushed.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl M_5936
+Ka 0.000000 0.000000 0.000000
+Kd 0.447059 0.282353 0.180392
+Ks 0.330000 0.330000 0.330000
+map_Kd Bedroom_door/M_5936.jpg
+
+newmtl M_5936b
+Ka 0.000000 0.000000 0.000000
+Kd 0.447059 0.282353 0.180392
+Ks 0.330000 0.330000 0.330000
+map_Kd Bedroom_door/M_5936b.jpg
+
+newmtl M_0135_DarkGray
+Ka 0.000000 0.000000 0.000000
+Kd 0.317647 0.317647 0.317647
+Ks 0.330000 0.330000 0.330000
+
