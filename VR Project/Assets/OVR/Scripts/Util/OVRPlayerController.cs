@@ -78,6 +78,10 @@ public class OVRPlayerController : MonoBehaviour
 	/// </summary>
 	public bool useProfileData = true;
 
+    //Time in milliseconds it takes for the character to reach full acceleration from jumping.
+    public int jumpTime = 100;
+    private int jumpCounter = 0;
+
 	protected CharacterController Controller = null;
 	protected OVRCameraRig CameraRig = null;
 
@@ -221,6 +225,16 @@ public class OVRPlayerController : MonoBehaviour
 		bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
 		bool moveBack = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
 
+        if(Input.GetButtonDown("A"))
+        {
+            Jump();
+        }
+        if(jumpCounter > 0)
+        {
+            MoveThrottle += new Vector3(0, transform.lossyScale.y * JumpForce/jumpTime, 0);
+            jumpCounter--;
+        }
+
 		bool dpad_move = false;
 
 		if (OVRInput.Get(OVRInput.Button.DpadUp))
@@ -243,8 +257,8 @@ public class OVRPlayerController : MonoBehaviour
 			MoveScale = 0.70710678f;
 
 		// No positional movement if we are in the air
-		if (!Controller.isGrounded)
-			MoveScale = 0.0f;
+		//if (!Controller.isGrounded)
+			//MoveScale = 0.0f;
 
 		MoveScale *= SimulationRate * Time.deltaTime;
 
@@ -353,8 +367,8 @@ public class OVRPlayerController : MonoBehaviour
 	{
 		if (!Controller.isGrounded)
 			return false;
-
-        MoveThrottle += new Vector3(0, transform.lossyScale.y * JumpForce, 0);
+        jumpCounter = jumpTime;
+        //MoveThrottle += new Vector3(0, transform.lossyScale.y * JumpForce, 0);
 
 		return true;
 	}
