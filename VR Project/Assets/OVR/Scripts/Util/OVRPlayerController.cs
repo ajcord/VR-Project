@@ -163,9 +163,11 @@ public class OVRPlayerController : MonoBehaviour
 			}
 
 			var p = CameraRig.transform.localPosition;
-			p.y = OVRManager.profile.eyeHeight - 0.5f * Controller.height
-				+ Controller.center.y;
-			CameraRig.transform.localPosition = p;
+            //p.y = OVRManager.profile.eyeHeight - 0.5f * Controller.height
+            //	+ Controller.center.y;
+            p.y = 0.3f - 0.5f * Controller.height
+            	+ Controller.center.y;
+            CameraRig.transform.localPosition = p;
 		}
 		else if (InitialPose != null)
 		{
