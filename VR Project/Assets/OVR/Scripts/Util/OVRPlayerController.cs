@@ -71,7 +71,7 @@ public class OVRPlayerController : MonoBehaviour
 	/// <summary>
 	/// Modifies the strength of gravity.
 	/// </summary>
-	public float GravityModifier = 0.3f;
+	public float GravityModifier = 0.379f;
 	
 	/// <summary>
 	/// If true, each OVRPlayerController will use the player's physical height.
@@ -216,7 +216,7 @@ public class OVRPlayerController : MonoBehaviour
 		if (HaltUpdateMovement)
 			return;
 
-        if (Input.GetButton("A"))
+        if(Input.GetButton("A"))
         {
             Jump();
         }
@@ -248,8 +248,8 @@ public class OVRPlayerController : MonoBehaviour
 			MoveScale = 0.70710678f;
 
 		// No positional movement if we are in the air
-		/*if (!Controller.isGrounded)
-			MoveScale = 0.0f;*/
+		//if (!Controller.isGrounded)
+			//MoveScale = 0.0f;
 
 		MoveScale *= SimulationRate * Time.deltaTime;
 
