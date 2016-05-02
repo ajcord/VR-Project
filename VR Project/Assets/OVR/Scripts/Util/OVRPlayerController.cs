@@ -216,11 +216,6 @@ public class OVRPlayerController : MonoBehaviour
 		if (HaltUpdateMovement)
 			return;
 
-        if(Input.GetButton("A"))
-        {
-            Jump();
-        }
-
 		bool moveForward = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
 		bool moveLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
 		bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
@@ -248,8 +243,8 @@ public class OVRPlayerController : MonoBehaviour
 			MoveScale = 0.70710678f;
 
 		// No positional movement if we are in the air
-		//if (!Controller.isGrounded)
-			//MoveScale = 0.0f;
+		if (!Controller.isGrounded)
+			MoveScale = 0.0f;
 
 		MoveScale *= SimulationRate * Time.deltaTime;
 
