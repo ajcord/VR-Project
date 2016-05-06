@@ -46,7 +46,7 @@ public class OVRPlayerController : MonoBehaviour
 	/// <summary>
 	/// The force applied to the character when jumping.
 	/// </summary>
-	public float JumpForce = 0.3f;
+	public float JumpForce = 0.4f; //original: 0.3
 
 	/// <summary>
 	/// The rate of rotation when using a gamepad.
@@ -246,6 +246,7 @@ public class OVRPlayerController : MonoBehaviour
 		if (!Controller.isGrounded)
 			MoveScale = 0.0f;
 
+
 		MoveScale *= SimulationRate * Time.deltaTime;
 
 		// Compute this for key movement
@@ -324,7 +325,12 @@ public class OVRPlayerController : MonoBehaviour
 		euler.y += secondaryAxis.x * rotateInfluence;
 
 		transform.rotation = Quaternion.Euler(euler);
-	}
+
+        if (Input.GetKey(KeyCode.Space) || Input.GetButtonDown("A"))
+        {
+            Jump();
+        }
+    }
 
 	/// <summary>
 	/// Invoked by OVRCameraRig's UpdatedAnchors callback. Allows the Hmd rotation to update the facing direction of the player.
