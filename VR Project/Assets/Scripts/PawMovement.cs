@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PawMovement : MonoBehaviour {
+public class PawMovement : MonoBehaviour
+{
 
     public Transform farEnd;
+    private Vector3 defPos;
     private Vector3 start;
     private Vector3 endpoint;
     private Vector3 initialLocation;
@@ -15,14 +17,16 @@ public class PawMovement : MonoBehaviour {
     void Start()
     {
         initialLocation = transform.position - transform.parent.position;
+        defPos = transform.localPosition;
         run = false;
     }
 
     void Update()
     {
-        if(Input.GetButton("X"))
+        if (Input.GetButton("X"))
         {
-            start = transform.parent.position + initialLocation;
+            //start = transform.parent.position + initialLocation;
+            start = transform.position;
             endpoint = start;
             endpoint += transform.parent.forward;
             run = true;
@@ -39,6 +43,11 @@ public class PawMovement : MonoBehaviour {
                 transform.position = start;
                 run = false;
             }
+        }
+        // added to reset start pos
+        if (!run)
+        {
+            transform.localPosition = defPos;
         }
     }
 }
