@@ -88,7 +88,7 @@ public class OVRPlayerController : MonoBehaviour
 	private float InitialYRotation = 0.0f;
 	private float MoveScaleMultiplier = 1.0f;
 	private float RotationScaleMultiplier = 1.0f;
-	private bool  SkipMouseRotation = true;
+	private bool  SkipMouseRotation = false;
 	private bool  HaltUpdateMovement = false;
 	private bool prevHatLeft = false;
 	private bool prevHatRight = false;
@@ -216,11 +216,6 @@ public class OVRPlayerController : MonoBehaviour
 		if (HaltUpdateMovement)
 			return;
 
-        if(Input.GetButtonDown("A"))
-        {
-            Jump();
-        }
-
 		bool moveForward = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
 		bool moveLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
 		bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
@@ -246,6 +241,10 @@ public class OVRPlayerController : MonoBehaviour
 		if ( (moveForward && moveLeft) || (moveForward && moveRight) ||
 			 (moveBack && moveLeft)    || (moveBack && moveRight) )
 			MoveScale = 0.70710678f;
+
+		// No positional movement if we are in the air
+		if (!Controller.isGrounded)
+			MoveScale = 0.0f;
 
 		MoveScale *= SimulationRate * Time.deltaTime;
 
@@ -296,8 +295,8 @@ public class OVRPlayerController : MonoBehaviour
 		float rotateInfluence = SimulationRate * Time.deltaTime * RotationAmount * RotationScaleMultiplier;
 
 #if !UNITY_ANDROID || UNITY_EDITOR
-		if (!SkipMouseRotation)
-			euler.y += Input.GetAxis("Mouse X") * rotateInfluence * 3.25f;
+		//if (!SkipMouseRotation)
+			//euler.y += Input.GetAxis("Mouse X") * rotateInfluence * 3.25f;
 #endif
 
 		moveInfluence = SimulationRate * Time.deltaTime * Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
