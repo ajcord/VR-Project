@@ -18,6 +18,7 @@ public class StartArea : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("A"))
         {
+            this.enabled = false;
             StartCamera.enabled = false;
             title.SetActive(false);
             subtitle.SetActive(false);
