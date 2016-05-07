@@ -32,6 +32,28 @@ ModelImporter:
     100052: Shrub
     100054: Spikes
     100056: Cyl_Sph_Sqr_Bamboo
+    100058: Cross_bamboo_Mesh
+    100060: Cross_cover_Mesh
+    100062: Cross_pot_collider_Mesh
+    100064: Cross_pot_Mesh
+    100066: Cyl_Sph_Sqr_Bamboo_Mesh
+    100068: Cylinder_cover_Mesh
+    100070: Cylinder_pot_collider_Mesh
+    100072: Cylinder_pot_Mesh
+    100074: Palm_Mesh
+    100076: Pine_Mesh
+    100078: Shrub_Mesh
+    100080: Sphere_pot_collider_Mesh
+    100082: Spheres_cover_Mesh
+    100084: Spheres_pot_Mesh
+    100086: Spikes_Mesh
+    100088: Square_cover_Mesh
+    100090: Square_pot_collider_Mesh
+    100092: Square_pot_Mesh
+    100094: Triangle_bamboo_Mesh
+    100096: Triangle_cover_Mesh
+    100098: Triangle_pot_collider_Mesh
+    100100: Triangle_pot_Mesh
     400000: //RootNode
     400002: Cross_bamboo
     400004: Cross_cover
@@ -61,6 +83,28 @@ ModelImporter:
     400052: Shrub
     400054: Spikes
     400056: Cyl_Sph_Sqr_Bamboo
+    400058: Cross_bamboo_Mesh
+    400060: Cross_cover_Mesh
+    400062: Cross_pot_collider_Mesh
+    400064: Cross_pot_Mesh
+    400066: Cyl_Sph_Sqr_Bamboo_Mesh
+    400068: Cylinder_cover_Mesh
+    400070: Cylinder_pot_collider_Mesh
+    400072: Cylinder_pot_Mesh
+    400074: Palm_Mesh
+    400076: Pine_Mesh
+    400078: Shrub_Mesh
+    400080: Sphere_pot_collider_Mesh
+    400082: Spheres_cover_Mesh
+    400084: Spheres_pot_Mesh
+    400086: Spikes_Mesh
+    400088: Square_cover_Mesh
+    400090: Square_pot_collider_Mesh
+    400092: Square_pot_Mesh
+    400094: Triangle_bamboo_Mesh
+    400096: Triangle_cover_Mesh
+    400098: Triangle_pot_collider_Mesh
+    400100: Triangle_pot_Mesh
     2300000: Cross_bamboo
     2300002: Cross_cover
     2300004: Cross_palm
@@ -89,6 +133,28 @@ ModelImporter:
     2300050: Shrub
     2300052: Spikes
     2300054: Cyl_Sph_Sqr_Bamboo
+    2300056: Cross_bamboo_Mesh
+    2300058: Cross_cover_Mesh
+    2300060: Cross_pot_collider_Mesh
+    2300062: Cross_pot_Mesh
+    2300064: Cyl_Sph_Sqr_Bamboo_Mesh
+    2300066: Cylinder_cover_Mesh
+    2300068: Cylinder_pot_collider_Mesh
+    2300070: Cylinder_pot_Mesh
+    2300072: Palm_Mesh
+    2300074: Pine_Mesh
+    2300076: Shrub_Mesh
+    2300078: Sphere_pot_collider_Mesh
+    2300080: Spheres_cover_Mesh
+    2300082: Spheres_pot_Mesh
+    2300084: Spikes_Mesh
+    2300086: Square_cover_Mesh
+    2300088: Square_pot_collider_Mesh
+    2300090: Square_pot_Mesh
+    2300092: Triangle_bamboo_Mesh
+    2300094: Triangle_cover_Mesh
+    2300096: Triangle_pot_collider_Mesh
+    2300098: Triangle_pot_Mesh
     3300000: Cross_bamboo
     3300002: Cross_cover
     3300004: Cross_palm
@@ -117,6 +183,28 @@ ModelImporter:
     3300050: Shrub
     3300052: Spikes
     3300054: Cyl_Sph_Sqr_Bamboo
+    3300056: Cross_bamboo_Mesh
+    3300058: Cross_cover_Mesh
+    3300060: Cross_pot_collider_Mesh
+    3300062: Cross_pot_Mesh
+    3300064: Cyl_Sph_Sqr_Bamboo_Mesh
+    3300066: Cylinder_cover_Mesh
+    3300068: Cylinder_pot_collider_Mesh
+    3300070: Cylinder_pot_Mesh
+    3300072: Palm_Mesh
+    3300074: Pine_Mesh
+    3300076: Shrub_Mesh
+    3300078: Sphere_pot_collider_Mesh
+    3300080: Spheres_cover_Mesh
+    3300082: Spheres_pot_Mesh
+    3300084: Spikes_Mesh
+    3300086: Square_cover_Mesh
+    3300088: Square_pot_collider_Mesh
+    3300090: Square_pot_Mesh
+    3300092: Triangle_bamboo_Mesh
+    3300094: Triangle_cover_Mesh
+    3300096: Triangle_pot_collider_Mesh
+    3300098: Triangle_pot_Mesh
     4300000: Cross_bamboo
     4300002: Cross_cover
     4300004: Cross_palm
@@ -145,6 +233,28 @@ ModelImporter:
     4300050: Shrub
     4300052: Spikes
     4300054: Cyl_Sph_Sqr_Bamboo
+    4300056: Cross_bamboo_Mesh
+    4300058: Cross_cover_Mesh
+    4300060: Cross_pot_collider_Mesh
+    4300062: Cross_pot_Mesh
+    4300064: Cyl_Sph_Sqr_Bamboo_Mesh
+    4300066: Cylinder_cover_Mesh
+    4300068: Cylinder_pot_collider_Mesh
+    4300070: Cylinder_pot_Mesh
+    4300072: Palm_Mesh
+    4300074: Pine_Mesh
+    4300076: Shrub_Mesh
+    4300078: Sphere_pot_collider_Mesh
+    4300080: Spheres_cover_Mesh
+    4300082: Spheres_pot_Mesh
+    4300084: Spikes_Mesh
+    4300086: Square_cover_Mesh
+    4300088: Square_pot_collider_Mesh
+    4300090: Square_pot_Mesh
+    4300092: Triangle_bamboo_Mesh
+    4300094: Triangle_cover_Mesh
+    4300096: Triangle_pot_collider_Mesh
+    4300098: Triangle_pot_Mesh
     9500000: //RootNode
   materials:
     importMaterials: 0
