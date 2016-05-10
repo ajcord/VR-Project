@@ -33,12 +33,10 @@ public class Light_toggle : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Z))
         {
             Debug.Log("Keydown");
-            foreach (GameObject Light2 in Lights)
-            {
-                Light light1 = Light2.GetComponent<Light>();
-                light1.intensity = 0;
-                Debug.Log("Toggle light");
-            }
+            GameObject Light2 = Lights[0];
+            Light light1 = Light2.GetComponent<Light>();
+            light1.intensity = 0;
+            Debug.Log("Toggle");
         }
 	
 	}
