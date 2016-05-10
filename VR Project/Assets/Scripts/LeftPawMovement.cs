@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PawMovement : MonoBehaviour
-{
+public class LeftPawMovement : MonoBehaviour {
 
     public Transform farEnd;
     private Vector3 defPos;
@@ -19,35 +18,32 @@ public class PawMovement : MonoBehaviour
         initialLocation = transform.position - transform.parent.position;
         defPos = transform.localPosition;
         run = false;
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
-    void Update()
-    {
-        if (Input.GetButton("X"))
-        {
-            //start = transform.parent.position + initialLocation;
-            start = transform.position;
-            endpoint = start;
-            endpoint += transform.parent.forward;
-            run = true;
-            startTime = Time.time;
-        }
-        if (run)
-        {
+    void Update() {
+        if (run) {
+            GetComponent<MeshRenderer>().enabled = true;
             transform.position = Vector3.Lerp(start, endpoint,
                 Mathf.SmoothStep(0f, pawLength,
                 Mathf.PingPong((Time.time - startTime) / secondsForOneLength * 2, 1f)
                 ));
-            if (Time.time > startTime + secondsForOneLength)
-            {
+            if (Time.time > startTime + secondsForOneLength) {
                 transform.position = start;
                 run = false;
+                GetComponent<MeshRenderer>().enabled = false;
             }
         }
-        // added to reset start pos
-        if (!run)
-        {
+        else {
             transform.localPosition = defPos;
+            if (Input.GetAxis("LeftTrigger") == 1) {
+                //start = transform.parent.position + initialLocation;
+                start = transform.position;
+                endpoint = start;
+                endpoint += transform.parent.forward;
+                run = true;
+                startTime = Time.time;
+            }
         }
     }
 }
