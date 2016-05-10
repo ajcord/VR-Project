@@ -95,7 +95,7 @@ namespace UnityStandardAssets.ImageEffects
 			{
                 for (float i = 0.0f; i <= 1.0f; i += 1.0f / 255.0f)
 				{
-                    float rCh = Mathf.Clamp (redChannel.Evaluate(i), 0.4f,0.45f);
+                    float rCh = Mathf.Clamp (redChannel.Evaluate(i), 0f,1f);
                     float gCh = Mathf.Clamp (greenChannel.Evaluate(i), 0f, 1.0f);
                     float bCh = Mathf.Clamp (blueChannel.Evaluate(i), 0f, 1.0f);
 
