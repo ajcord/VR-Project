@@ -48,8 +48,9 @@ namespace UnityStandardAssets.ImageEffects
         public Shader colorCorrectionSelectiveShader = null;
 
         private bool  updateTexturesOnStartup = true;
-
-
+        public bool toggle = false;
+        public HSBColor hsb1 = new HSBColor(0f, 0f, 0f, 1f);
+        public Color rgb1 = new Color(0f, 0f, 0f);
         new void Start ()
 		{
             base.Start ();
@@ -95,9 +96,28 @@ namespace UnityStandardAssets.ImageEffects
 			{
                 for (float i = 0.0f; i <= 1.0f; i += 1.0f / 255.0f)
 				{
-                    float rCh = Mathf.Clamp (redChannel.Evaluate(i), 0.4f,0.45f);
+                    float rCh = Mathf.Clamp (redChannel.Evaluate(i), 0f,1.0f);
                     float gCh = Mathf.Clamp (greenChannel.Evaluate(i), 0f, 1.0f);
                     float bCh = Mathf.Clamp (blueChannel.Evaluate(i), 0f, 1.0f);
+                    if(Input.GetKeyDown(KeyCode.Z))
+                    {
+                        toggle = !toggle;
+                    }
+                    if(toggle)
+                    {
+                        rgb1.r = rCh;
+                        rgb1.g = gCh;
+                        rgb1.b = bCh;
+                        hsb1 = HSBColor.FromColor(rgb1);
+                        hsb1.s = hsb1.s * 0.35f;
+                        hsb1.b = 3f* Mathf.Pow(hsb1.b, 1f / 2.2f);
+                        rgb1 = HSBColor.ToColor(hsb1);
+                        rCh = rgb1.r;
+                        gCh = rgb1.g;
+                        bCh = rgb1.b;
+                    }
+                    
+
 
                     rgbChannelTex.SetPixel ((int) Mathf.Floor(i*255.0f), 0, new Color(rCh,rCh,rCh) );
                     rgbChannelTex.SetPixel ((int) Mathf.Floor(i*255.0f), 1, new Color(gCh,gCh,gCh) );
