@@ -6,10 +6,13 @@ public class StartArea : MonoBehaviour {
     Camera StartCamera;
     GameObject title;
     GameObject subtitle;
+    GameObject player;
 
     // Use this for initialization
     void Start () {
         StartCamera = gameObject.GetComponent<Camera>();
+        player = GameObject.Find("OVRPlayerController");
+        player.SetActive(false);
         title = GameObject.Find("Title");
         subtitle = GameObject.Find("Subtitle");
     }
@@ -18,6 +21,7 @@ public class StartArea : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("A"))
         {
+            player.SetActive(true);
             StartCamera.enabled = false;
             title.SetActive(false);
             subtitle.SetActive(false);
